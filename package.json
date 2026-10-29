@@ -1,0 +1,41 @@
+{
+  "name": "quilldesk",
+  "productName": "QuillDesk",
+  "version": "0.3.0",
+  "description": "A private, local writing desk for long stories.",
+  "author": "QuillDesk",
+  "license": "MIT",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "build": "vite build",
+    "start": "electron .",
+    "test": "node --test tests/*.test.cjs",
+    "test:ui": "node tests/electron-ui.cjs",
+    "package": "npm run build && electron-packager . QuillDesk --platform=win32 --arch=x64 --out=../releases/0.3.0 --overwrite --ignore=^/tests --ignore=^/src --ignore=^/test-results --ignore=^/README --prune=true --icon=assets/quilldesk.ico"
+  },
+  "dependencies": {
+    "@tiptap/extension-highlight": "3.32.0",
+    "@tiptap/extension-placeholder": "3.32.0",
+    "@tiptap/extension-text-align": "3.32.0",
+    "@tiptap/pm": "3.32.0",
+    "@tiptap/react": "3.32.0",
+    "@tiptap/starter-kit": "3.32.0",
+    "@xmldom/xmldom": "0.9.12",
+    "dictionary-de": "3.0.0",
+    "dictionary-en": "4.0.0",
+    "docx": "9.11.0",
+    "jszip": "3.10.2",
+    "lucide-react": "1.57.0",
+    "nspell": "2.1.5",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@electron/packager": "20.3.0",
+    "@playwright/test": "1.64.1",
+    "electron": "44.7.2",
+    "prettier": "3.9.10",
+    "vite": "8.3.4"
+  }
+}
